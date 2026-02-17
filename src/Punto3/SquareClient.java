@@ -4,6 +4,7 @@ import java.io.*;
 import java.net.*;
 
 public class SquareClient {
+    
     public static void main(String[] args) throws IOException {
         Socket echoSocket = null;
         PrintWriter out = null;
@@ -23,10 +24,11 @@ public class SquareClient {
         }
         BufferedReader stdIn = new BufferedReader(
                 new InputStreamReader(System.in));
+        System.out.print("Ingrese un número para calcular su cuadrado (o 'Bye.' para salir):");
         String userInput;
         while ((userInput = stdIn.readLine()) != null) {
             out.println(userInput);
-            System.out.println("echo: " + in.readLine());
+            System.out.println("answer: " + in.readLine());
         }
         out.close();
         in.close();

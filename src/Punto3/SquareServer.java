@@ -1,9 +1,10 @@
 package Punto3;
 
-import java.net.*;
 import java.io.*;
+import java.net.*;
 
 public class SquareServer {
+    
     public static void main(String[] args) throws IOException {
         ServerSocket serverSocket = null;
         try {
@@ -25,6 +26,9 @@ public class SquareServer {
                         clientSocket.getInputStream()));
         String inputLine, outputLine;
         while ((inputLine = in.readLine()) != null) {
+            if (inputLine.equals("Bye."))
+                
+                break;
             System.out.println("Mensaje: " + inputLine);
             try {
                 double number = Double.parseDouble(inputLine);
@@ -34,8 +38,7 @@ public class SquareServer {
                 outputLine = "Respuesta: Error - ingrese un número válido";
             }
             out.println(outputLine);
-            if (inputLine.equals("Bye."))
-                break;
+            
         }
         out.close();
         in.close();

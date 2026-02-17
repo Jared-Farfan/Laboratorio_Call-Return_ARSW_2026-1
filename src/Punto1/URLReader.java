@@ -1,20 +1,26 @@
-package Punto1;
+package  Punto1;
 
 import java.net .*;
+import java.util.Scanner;
 
 public class URLReader {
 
-    // public static void Ur(String[] args) throws Exception {
-    //     URL google = new URL("http://www.google.com/");
-    //     try (BufferedReader reader = new BufferedReader(new InputStreamReader(google.openStream()))) {
-    //         String inputLine = null;
-    //         while ((inputLine = reader.readLine()) != null) {
-    //             System.out.println(inputLine);
-    //         }
-    //     } catch (IOException x) {
-    //         System.err.println(x);
-    //     }
-    // }
+    public static void main(String[] args){
+        URLReader urlReader = new URLReader();
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a URL:");
+        String url = scanner.nextLine();
+        while (url != null && !url.isEmpty()) {
+            try {
+            urlReader.urlReader(url);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+            System.out.print("Enter a URL:");
+            url = scanner.nextLine();
+        }
+        scanner.close();
+    }
 
     public void urlReader(String args) throws Exception {
         URL google = new URL(args);
