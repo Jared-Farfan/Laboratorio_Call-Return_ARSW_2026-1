@@ -1,3 +1,6 @@
+import Punto1.URLReader;
+import Punto2.Browser;
+
 import java.util.Scanner;
 import java.io.*;
 import java.net.*;

@@ -1,3 +1,5 @@
+package Punto1;
+
 import java.net .*;
 
 public class URLReader {
