@@ -11,7 +11,7 @@ public class FunServer {
 
     private static final int PORT = 35000;
 
-    public static void main(String[] args) {
+    public static void main(String[] args ){
 
         System.out.println("Servidor iniciado en el puerto " + PORT);
 
